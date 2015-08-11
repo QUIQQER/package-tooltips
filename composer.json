@@ -1,0 +1,27 @@
+{
+    "name" : "quiqqer/tooltips",
+    "type" : "quiqqer-module",
+    "description" : "Tooltips for templates",
+    "version" : "dev-master",
+    "license" : "MIT",
+
+    "authors" : [{
+        "homepage": "http://www.pcsg.de"
+    }],
+
+    "support" : {
+        "email": "support@pcsg.de",
+        "url": "http://www.pcsg.de"
+    },
+
+    "require": {
+        "php" : ">=5.3",
+        "quiqqer/quiqqer" : "*@dev"
+    },
+
+    "autoload": {
+        "psr-0" : {
+            "QUI" : "src/"
+        }
+    }
+}
