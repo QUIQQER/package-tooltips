@@ -28,6 +28,8 @@ class Events
 
                 require([\'html5tooltips\'], function(html5tooltips) {
                     html5tooltips.autoinit();
+
+                    document.getElements("[data-tooltip]").set("title", "");
                 });
             /* ]]> */
             </script>'
