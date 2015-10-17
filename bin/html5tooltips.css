@@ -76,5 +76,5 @@
 .html5tooltip-left,
 .html5tooltip-right,
 .html5tooltip-top {
-    z-index: 1000;
+    z-index: 100000;
 }

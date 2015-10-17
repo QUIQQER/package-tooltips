@@ -22,7 +22,7 @@ class Events
             /* <![CDATA[ */
                 require.config({
                     paths : {
-                        html5tooltips : URL_OPT_DIR +"quiqqer/tooltips/bin/html5tooltips.1.4.min"
+                        html5tooltips : URL_OPT_DIR +"quiqqer/tooltips/bin/html5tooltips"
                     }
                 });
 
@@ -30,6 +30,8 @@ class Events
                     html5tooltips.autoinit();
 
                     document.getElements("[data-tooltip]").set("title", "");
+
+                    window.html5tooltips = html5tooltips;
                 });
             /* ]]> */
             </script>'

@@ -13,8 +13,9 @@
  * Arend van Beelen jr. https://github.com/arendjr
  * Peter Richmond https://github.com/Peripheral1994
  * Bruno Wego https://github.com/brunowego
+ * Kahmali Rose https://github.com/kahmali
  *
- * July 28, 2015
+ * Sep 1, 2015
  **/
 
 (function() {
@@ -95,6 +96,7 @@
             color: null,
             contentText: "",
             contentMore: "",
+            delay: 500,
             disableAnimation: false,
             stickTo: html5tooltipsPredefined.stickTo.bottom,
             stickDistance: 10,
@@ -109,6 +111,7 @@
             animateFunction: null,
             color: null,
             HTMLTemplate: null,
+            delay: null,
             disableAnimation: null,
             stickTo: null,
             maxWidth: null
@@ -118,7 +121,6 @@
             HTML: [
                 "<div class='html5tooltip' style='box-sizing:border-box;position:fixed;'>",
                 "<div class='html5tooltip-box'>",
-                "<div class='html5tooltip-pointer'></div>",
                 "<div class='html5tooltip-text'></div>",
                 "<div class='html5tooltip-more' style='overflow:hidden;'>",
                 "<div class='html5tooltip-text'></div>",
@@ -132,8 +134,7 @@
                 tooltipBox: 'html5tooltip-box',
                 tooltipText: 'html5tooltip-text',
                 tooltipMore: 'html5tooltip-more',
-                tooltipMoreText: 'html5tooltip-text',
-                tooltipPointer: 'html5tooltip-pointer'
+                tooltipMoreText: 'html5tooltip-text'
             }
         };
 
@@ -143,7 +144,7 @@
 
         try {
             var result = document.evaluate(xpath, (context || document), null,
-                XPathResult.ANY_TYPE, null);
+                                           XPathResult.ANY_TYPE, null);
 
             for (var item = result.iterateNext(); item; item = result.iterateNext())
                 nodes.push(item);
@@ -235,8 +236,8 @@
                 }, ttModel.animateDuration);
             }
             else
-                if (updateHandler)
-                    updateHandler();
+            if (updateHandler)
+                updateHandler();
         }
 
         function destroy()
@@ -297,7 +298,7 @@
                 updatePos();
 
                 applyAnimationClass(elBox, ttModel.animateFunction + "-from",
-                    ttModel.animateFunction + "-to");
+                                    ttModel.animateFunction + "-to");
             }
 
             return this;
@@ -309,7 +310,7 @@
                 ttElement.style.visibility = 'visible';
 
                 applyAnimationClass(elBox, ttModel.animateFunction + "-from",
-                    ttModel.animateFunction + "-to");
+                                    ttModel.animateFunction + "-to");
 
                 if (ttModel.contentMore) {
                     elMore.style.display = 'block';
@@ -360,7 +361,7 @@
             ttElement.style.width = "auto";
             ttRect = ttElement.getBoundingClientRect();
 
-            var maxWidth = ttModel.maxWidth || options.maxWidth;
+            var maxWidth = parseInt(ttModel.maxWidth) || options.maxWidth;
             if (maxWidth)
                 ttElement.style.width = ttRect.width > maxWidth ? maxWidth + "px" : "auto";
 
@@ -446,6 +447,9 @@
             if (elTarget.getAttribute("data-tooltip-color") !== null)
                 tm.color = elTarget.getAttribute("data-tooltip-color");
 
+            if (elTarget.getAttribute("data-tooltip-delay") !== null)
+                tm.delay = elTarget.getAttribute("data-tooltip-delay");
+
             if (elTarget.getAttribute("data-tooltip-more") !== null)
                 tm.contentMore = elTarget.getAttribute("data-tooltip-more");
 
@@ -476,7 +480,7 @@
                 setTimeout(function() {
                     if (activeElements.hovered === this)
                         tt.showBrief();
-                }.bind(this), 300);
+                }.bind(this), tModel.delay);
             }
 
             function targetMouseout()
@@ -517,14 +521,14 @@
 
             tModel.targetElements.forEach(function(el) {
                 destrStack.push(function(){
-                    el.removeEventListener("mouseover",targetMousemove);
-                    el.removeEventListener("mouseout",targetMouseout);
+                    el.removeEventListener("mouseenter",targetMousemove);
+                    el.removeEventListener("mouseleave",targetMouseout);
                     el.removeEventListener("focus",targetFocus);
                     el.removeEventListener("blur",targetBlur);
                 });
 
-                el.addEventListener("mouseover",targetMousemove);
-                el.addEventListener("mouseout",targetMouseout);
+                el.addEventListener("mouseenter",targetMousemove);
+                el.addEventListener("mouseleave",targetMouseout);
                 el.addEventListener("focus",targetFocus);
                 el.addEventListener("blur",targetBlur);
             });
@@ -626,7 +630,9 @@
 
     window.addEventListener("scroll", function()
     {
-        tt.updatePos();
+        if (tt) {
+            tt.updatePos();
+        }
     }, false );
 
 })();
