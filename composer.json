@@ -2,7 +2,7 @@
     "name" : "quiqqer/tooltips",
     "type" : "quiqqer-module",
     "description" : "Tooltips for templates",
-    "version" : "dev-dev",
+    "version" : "dev-master",
     "license" : "MIT",
 
     "authors" : [{
