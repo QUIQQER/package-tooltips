@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <groups name="quiqqer/tooltips" datatype="php,js">
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER - Tooltips]]></de>
+            <en><![CDATA[QUIQQER - Tooltips]]></en>
+        </locale>
+        <locale name="package.description" html="true">
+            <de><![CDATA[Tooltips Controls / Components basierend auf html5tooltipsjs]]></de>
+            <en><![CDATA[Tooltips Controls / Components based on html5tooltipsjs]]></en>
+        </locale>
+    </groups>
+</locales>
