@@ -1,0 +1,11 @@
+<quiqqer>
+    <package>
+        <title>
+            <locale group="quiqqer/tooltips" var="package.title"/>
+        </title>
+
+        <description>
+            <locale group="quiqqer/tooltips" var="package.description"/>
+        </description>
+    </package>
+</quiqqer>
