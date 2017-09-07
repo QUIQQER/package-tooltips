@@ -1,7 +1,7 @@
 {
     "name" : "quiqqer/tooltips",
     "type" : "quiqqer-module",
-    "description" : "Tooltips for templates",
+    "description" : "Tooltips Controls / Components based on html5tooltipsjs",
     "version" : "dev-dev",
     "license" : "MIT",
 
