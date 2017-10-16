@@ -19,8 +19,8 @@
     "npm-asset/html5tooltipsjs": "1.*"
   },
   "autoload": {
-    "psr-0": {
-      "QUI": "src/"
+    "psr-4": {
+      "QUI\\Tooltips\\": "src/QUI/Tooltips"
     }
   }
 }
