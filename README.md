@@ -3,25 +3,29 @@
 Tooltips
 ========
 
-QUIQQER Tooltips basierend auf https://github.com/ytiurin/html5tooltipsjs
+QUIQQER Tooltips based on [html5tooltipsjs](https://github.com/ytiurin/html5tooltipsjs)
 
 
-Paketname:
+Package Name:
 
     quiqqer/tooltips
 
 
-Features (Funktionen)
+Features
 --------
+
+- Tooltips based on [html5tooltipsjs](https://github.com/ytiurin/html5tooltipsjs)
+- highly customizable (style/design, contents, animations, ...)
+- usable via simple HTML-attributes or JavaScript-functions
 
 
 Installation
 ------------
 
-Der Paketname ist: quiqqer/tooltips
+The package name is: quiqqer/tooltips
 
 
-Mitwirken
+Contribute
 ----------
 
 - Issue Tracker: https://dev.quiqqer.com/quiqqer/package-tooltips/issues
@@ -31,28 +35,29 @@ Mitwirken
 Support
 -------
 
-Falls Sie Fehler gefunden, Wünsche oder Verbesserungsvorschläge haben, 
-können Sie uns gern per Mail an support@pcsg.de darüber informieren.  
-Wir werden versuchen auf Ihre Wünsche einzugehen bzw. diese an die 
-zuständigen Entwickler des Projektes weiterleiten.
+If you found any flaws, have any wishes or suggestions you can send an email
+to [support@pcsg.de](mailto:support@pcsg.de) to inform us about your concerns. 
+We will try to respond to your request and forward it to the responsible developer.
 
-Lizenz
+
+License
 -------
 
 MIT
 
-Entwickler
+
+Usage
 --------
 
 ```javascript
 
-require(['html5tooltips'], function(html5tooltips) {
+require(['package/quiqqer/tooltips/bin/html5tooltips'], function(html5tooltips) {
     html5tooltips({
         animateFunction: "spin",
         color          : "tangerine",
         stickTo        : "top",
-        contentText    : text,
-        targetSelector : '#' + id
+        contentText    : "This is the tooltip's text",
+        targetSelector : "#my-tooltip"
     });
 });
 
@@ -60,5 +65,5 @@ require(['html5tooltips'], function(html5tooltips) {
 
 
 ```html
-<div data-tooltip="My Alt Text"></div>
+<div id="my-tooltip" data-tooltip="My Alt Text"></div>
 ```
