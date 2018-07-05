@@ -1,3 +1,5 @@
+![Tooltips](bin/images/Readme.jpg)
+
 Tooltips
 ========
 
