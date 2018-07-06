@@ -16,7 +16,7 @@
   "require": {
     "php": ">=5.3",
     "quiqqer/quiqqer": "*@dev",
-    "npm-asset/html5tooltipsjs": "dev-master"
+    "npm-asset/html5tooltipsjs": "*"
   },
   "autoload": {
     "psr-4": {
