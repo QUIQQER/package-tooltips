@@ -2,7 +2,7 @@
   "name": "quiqqer/tooltips",
   "type": "quiqqer-plugin",
   "description": "Tooltips Controls / Components based on html5tooltipsjs",
-  "version": "dev-dev",
+  "version": "dev-master",
   "license": "MIT",
   "authors": [
     {
