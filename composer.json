@@ -1,27 +1,26 @@
 {
-    "name" : "quiqqer/tooltips",
-    "type" : "quiqqer-module",
-    "description" : "Tooltips for templates",
-    "version" : "dev-master",
-    "license" : "MIT",
-
-    "authors" : [{
-        "homepage": "http://www.pcsg.de"
-    }],
-
-    "support" : {
-        "email": "support@pcsg.de",
-        "url": "http://www.pcsg.de"
-    },
-
-    "require": {
-        "php" : ">=5.3",
-        "quiqqer/quiqqer" : "*@dev"
-    },
-
-    "autoload": {
-        "psr-0" : {
-            "QUI" : "src/"
-        }
+  "name": "quiqqer/tooltips",
+  "type": "quiqqer-plugin",
+  "description": "Tooltips Controls / Components based on html5tooltipsjs",
+  "version": "dev-dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "homepage": "http://www.pcsg.de"
     }
+  ],
+  "support": {
+    "email": "support@pcsg.de",
+    "url": "http://www.pcsg.de"
+  },
+  "require": {
+    "php": ">=5.3",
+    "quiqqer/quiqqer": "*@dev",
+    "npm-asset/html5tooltipsjs": "^1.7.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "QUI\\Tooltips\\": "src/QUI/Tooltips"
+    }
+  }
 }
