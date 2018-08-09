@@ -6,7 +6,16 @@
   "license": "MIT",
   "authors": [
     {
-      "homepage": "http://www.pcsg.de"
+      "name": "Henning Leutz",
+      "email": "support@pcsg.de",
+      "homepage": "http://www.pcsg.de",
+      "role": "Developer"
+    },
+    {
+      "name": "Jan Wennrich",
+      "email": "support@pcsg.de",
+      "homepage": "http://www.pcsg.de",
+      "role": "Developer"
     }
   ],
   "support": {
