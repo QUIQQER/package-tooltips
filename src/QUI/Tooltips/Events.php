@@ -20,7 +20,7 @@ class Events
      */
     public static function onTemplateGetHeader($Template)
     {
-        $Template->extendHeaderWithCSSFile(URL_OPT_DIR.'bin/html5tooltipsjs/html5tooltips.css');
-        $Template->extendHeaderWithCSSFile(URL_OPT_DIR.'bin/html5tooltipsjs/html5tooltips.animation.css');
+        $Template->extendHeaderWithCSSFile(URL_OPT_DIR.'bin/quiqqer-asset/html5tooltipsjs/html5tooltipsjs/html5tooltips.css');
+        $Template->extendHeaderWithCSSFile(URL_OPT_DIR.'bin/quiqqer-asset/html5tooltipsjs/html5tooltipsjs/html5tooltips.animation.css');
     }
 }
